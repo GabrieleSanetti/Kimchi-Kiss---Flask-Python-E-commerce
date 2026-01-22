@@ -1,5 +1,5 @@
 # Usa Python versione "slim" (leggera)
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Crea una cartella di lavoro nel container
 WORKDIR /app
