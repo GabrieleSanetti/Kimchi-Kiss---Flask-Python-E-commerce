@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='lucky-box.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="main">
+        <img width="144px" src="../static/img/icon-open-box.svg" alt=""><h2>Lucky Box</h2>
+
+        <div class="recensioni">
+            <span class="testo">5</span>
+            <span class="stelle">
+                <img src="../static/img/icon-star.svg">
+                <img src="../static/img/icon-star.svg">
+                <img src="../static/img/icon-star.svg">
+                <img src="../static/img/icon-star.svg">
+                <img src="../static/img/icon-star.svg">
+            </span>
+            <span class="testo">basato su 354 recensioni</span>
+        </div>
+
+        <div class="opzioni">
+            <form>
+                <select name="abbonamento" id="abbonamento">
+                    <option value="">Seleziona la tua Lucky Box</option>
+                    <option value="tantum">Una Tantum - € 59,00</option>
+                    <option value="trimestre">Trimestrale - € 39,00 al mese</option>
+                    <option value="semestre">Semestrale - € 29,00 al mese</option>
+                    <option value="anno">Annuale - € 19,00 al mese</option>
+                </select>
+            </form>
+        </div>
+
+                <form action="/lucky-box" method="POST">
+                    <button type="submit">Tenta la Fortuna!</button>
+                </form>
+        <!-- ### Card Prodotto ### -->
+            <div class="products">
+                {% for prodotto in luckybox %}
+                    <a class="product" href="/prodotto/{{prodotto.id}}">
+                        <img width="120px" src="../static/img/prodotti/{{prodotto.img}}">
+                        <h2 class="title-product">{{prodotto.titolo}}</h2>
+                    </a>
+                {% endfor %}
+            </div>
+        <!-- ### FINE Card Prodotto ### -->
+
+        <div class="box">
+            <img src="../static/img/lucky-box.png" alt="">
+            <div class="testo-box">
+                <h3>Come Funziona la <span>Lucky Box</span>?</h3>
+                <p>Acquistanto la tua box una tantum riceverai i prodotti che vedi sopra.</p>
+                <p>Invece scegliendo un abbonamento, riceverai la box una volta ogni 15 giorni con prodotti a sorpresa, tra questi sono inclusi:</p>
+                <ul>
+                    <li>Novità</li>
+                    <li>Prodotti Speciali</li>
+                </ul>
+                <p>Scegli la tua box ora!</p>
+                <h3>Cos'è il Prodotto Misterioso?</h3>
+                <p>Il prodotto misterioso è un prodotto scelto da noi di <span class="kimchi">Kimchi</span><span class="kiss">Kiss</span>.</p>
+                <p>Questo può essere o un prodotto speciale, o un prodotto del catalogo KimchiKiss.</p>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+{% endblock %}
+</html>

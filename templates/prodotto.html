@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='prodotto.css') }}">
+{% endblock %}
+
+{% block content %}
+  <section>
+    <div class="left">
+      <img width="500px" src="../static/img/prodotti/{{prodotto.img}}" alt="">
+    </div>
+
+    <div class="right">
+      <h2>{{prodotto.titolo}}</h2>
+        <p class="short">{{prodotto.descbreve}}</p>
+        <div class="vote">
+            <span>
+            {% for stella in range(prodotto.stelle) %}
+                <img src="../static/img/icon-star.svg">
+            {% endfor %}
+            </span>
+            <span><u>{{prodotto.recensioni}} recensioni</u></span></div>
+        <div class="price-avail">
+
+            {% if prodotto.prezzo_visibile == "si" %}
+                <span>€ {{prodotto.prezzo}}</span>
+            {% else %}
+                <span>€ ??</span>
+            {% endif %}
+
+            {% if prodotto.qta > 0 %}
+                <span class="disponibile">✅ Disponibile</span>
+            {% else %}
+                <span class="nondisponibile">❌ Non Disponibile</span>
+            {% endif %}
+        </div>
+        <div class="bottoni"><button>Acquista Ora</button><button>Aggiungi al Carrello</button></div>
+        <span class="sped">Spedizione garantita in 24/48h lavorative. 🚚</span>
+    </div>
+    <hr class="before_tabs">
+        <div class="tabs">
+          <input type="radio" class="style__radio" name="radio_tabs" id="tab1" checked>
+          <label for="tab1" class="style__label">Descrizione</label>
+            <div class="style__content">
+                {{prodotto.descrizione}}
+            </div>
+          <input type="radio" class="style__radio" name="radio_tabs" id="tab2">
+          <label for="tab2" class="style__label">Tabella Nutrizionale</label>
+            <div class="style__content">
+                <h2>{{prodotto.tabnutrizione}}</h2>
+                <table>
+                    <tr>
+                        <td>Informazioni nutrizionali per 100g:</td>
+                        <td><!--nutri.cal--></td>
+                    </tr>
+                    <tr>
+                        <td>Energia</td>
+                        <td><!--nutri.energia--></td>
+                    </tr>
+                    <tr>
+                        <td>Grassi</td>
+                        <td><!--nutri.zuccheri--></td>
+                    </tr>
+                    <tr>
+                        <td>Carboidrati</td>
+                        <td><!--nutri.carbo--></td>
+                    </tr>
+                    <tr>
+                        <td>Proteine</td>
+                        <td><!--nutri.proteine--></td>
+                    </tr>
+                    <tr>
+                        <td>Sale</td>
+                        <td><!--nutri.sale--></td>
+                    </tr>
+                </table>
+            </div>
+          <input type="radio" class="style__radio" name="radio_tabs" id="tab3">
+          <label for="tab3" class="style__label">Ingredienti</label>
+            <div class="style__content">
+                <p>{{prodotto.ingredienti}}</p>
+            </div>
+            <input type="radio" class="style__radio" name="radio_tabs" id="tab4">
+          <label for="tab4" class="style__label">Spedizioni</label>
+            <div class="style__content">
+                <p>Consegniamo in tutta Italia direttamente a casa tua</p>
+                <p>La spedizione standard è gratuita sopra i 69,00 €</p>
+                <p>Per garantire le migliori condizioni di freschezza, gli articoli frozen saranno imballati con un impacco di ghiaccio in un pluriball termico per alimenti.</p>
+                <p>Per le migliori condizioni fresche, gli ordini del venerdì e del fine settimana vengono consegnati il lunedì successivo.</p>
+                <p>Si prega di notare che nonostante l'impacco freddo, la funzione di raffreddamento diminuirà dopo un po' durante il trasporto e potrebbe essere consegnato leggermente scongelato durante il viaggio.</p>
+                <p>Si prega di conservarlo in frigorifero e consumarlo il prima possibile.</p>
+                <p>Il pluriball termico e l'icepack sono riutilizzabili.</p>
+                <p>Per le informazioni complete su costi di spedizione e modalità di reso vai alla pagina Termini e Condizioni.</p>
+            </div>
+      </div>
+  </section>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+{% endblock %}

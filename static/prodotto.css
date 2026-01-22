@@ -1,0 +1,231 @@
+section {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 46%;
+    padding-right: 2%;
+    border-right: 1px solid #d3d3d3;
+}
+
+.left img {
+    align-self: flex-end;
+    max-width: 100%;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px 0px;
+    object-fit: contain;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    padding-left: 2%;
+}
+.right h2 {
+    text-transform: capitalize;
+    margin-bottom: 1.5%;
+    font-size: 2.3rem;
+}
+
+.right .short {
+    color: #000000;
+    text-transform: none;
+    font-size: 1rem;
+}
+
+.right .price-avail {
+    margin: 5% 0 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+}
+/* Stile prezzo */
+.right .price-avail span:first-child {
+    font-size: 2rem;
+    color: #000000;
+    font-weight: normal;
+    margin-right: 20px;
+}
+
+/* Stile label Disponibilità: Disponibile*/
+.right .price-avail .disponibile {
+    background-color: rgba(104, 237, 32, 0.4);
+    width: fit-content;
+    text-align: center;
+    padding: 1%;
+    font-size: 1rem;
+    letter-spacing: 0.02rem;
+    border: 2px solid rgba(94, 181, 46, 0);
+    text-transform: capitalize;
+
+    transition: background-color, border, 0.3s ease-in-out;
+}
+
+.right .price-avail .disponibile:hover {
+    background-color: #ffffff;
+    border: 2px solid #5eb52e;
+}
+
+/* Stile label Disponibilità: Non Disponibile */
+.right .price-avail .nondisponibile {
+    background-color: rgba(187, 7, 22, 0.85);
+    width: fit-content;
+    text-align: center;
+    padding: 1%;
+    font-size: 1rem;
+    letter-spacing: 0.02rem;
+    border: 2px solid rgba(187, 7, 22, 0);
+    color: #ffffff;
+    text-transform: capitalize;
+
+    transition: background-color, border, color, 0.3s ease-in-out;
+}
+
+.right .price-avail .nondisponibile:hover {
+    background-color: #ffffff;
+    color: rgba(187, 7, 22);
+    border: 2px solid rgba(187, 7, 22, 0.85);
+}
+
+/* Fine Stile Label Disponibilità */
+
+.vote {
+    display: inline;
+    font-size: 1.3rem;
+    margin-top: 3%;
+}
+
+.vote img {
+    width: 25px;
+}
+
+.vote span:first-child {
+    margin-right: 10px;
+}
+/* Stile bottone base */
+.right .bottoni button {
+    width: 30%;
+    border-radius: 0;
+    padding: 2%;
+    font-size: 1.3rem;
+}
+/* Stile Primo Bottone */
+.right .bottoni button:first-child {
+    border: 3px solid #000000;
+    background-color: #000000;
+    color: #ffffff;
+    margin-right: 10%;
+
+    transition: background-color, border, color, 0.3s ease-in-out;
+}
+
+.right .bottoni button:first-child:hover {
+    border: 3px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Stile Secondo Bottone */
+.right .bottoni button:last-child {
+    margin-right: 0;
+    background-color: #ffffff;
+    border: 2px solid #FF7058;
+    color: #FF7058;
+
+    transition: background-color, border, color, 0.3s ease-in-out;
+}
+
+.right .bottoni button:last-child:hover {
+    background-color: #FF7058;
+    border: 2px solid #FF7058;
+    color: #ffffff;
+}
+
+.right .sped {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    color: #595959;
+    margin-top: 4%;
+    background-color: #F8B64C;
+    padding: 0.5% 3%;
+    width: fit-content;
+}
+
+.before_tabs {
+    margin: 2% 0;
+    width: 70vw;
+    border-top: 1px solid #d3d3d3;
+}
+
+table td:first-child {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+table td:last-child {
+    text-align: right;
+}
+
+table td {
+    border-bottom: 1px solid #000000;
+    padding-top: 5px;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.style__radio {
+    display: none;
+}
+
+.style__label {
+    border-bottom: 2px solid #f25c23;
+    cursor: pointer;
+    padding: 1% 4%;
+    margin-right: 2%;
+    background-color: #f79d90;
+
+
+    transition: background-color, border, 0.2s ease-in-out;
+}
+
+.style__label:last-of-type {
+    margin-right: 0;
+}
+
+.style__content {
+    width: 100%;
+    order: 1;
+    line-height: 1.5;
+    display: none;
+    margin-top: 2%;
+    height: 55vh;
+}
+
+.style__radio:checked+.style__label {
+    background-color: #f25c23;
+    color: white;
+    border-bottom: 1px solid transparent;
+}
+
+.style__radio:checked+.style__label+.style__content {
+    display: initial;
+}

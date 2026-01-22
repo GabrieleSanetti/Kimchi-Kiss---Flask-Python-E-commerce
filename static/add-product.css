@@ -1,0 +1,113 @@
+section {
+    width: 100%;
+    padding-bottom: 2%;
+}
+
+section form {
+    display: flex;
+    flex-direction: row;
+
+    width: 60%;
+    /*border: 1px solid red;*/
+    margin: 0 auto;
+    background-color: #e4e4e4;
+    padding: 2%;
+    flex-wrap: wrap;
+
+}
+
+form .left {
+    width: 50%;
+    display: flex;flex-direction: column;
+    justify-items: flex-start;
+    align-items: flex-start;
+}
+
+form .right {
+    width: 50%;
+    display: flex;flex-direction: column;
+    justify-items: flex-start;
+    align-items: flex-start;
+}
+
+section form label {
+    font-size: 1.2rem;
+    margin-bottom: 1%;
+    width: 80%;
+}
+
+section form input {
+    height: 2rem;
+    margin-bottom: 3%;
+    outline: none;
+    border: 1px solid rgba(255, 112, 88, 0);
+    padding-left: 0.5rem;
+    width: 80%;
+}
+
+section form input:focus {
+    border: 1px solid rgba(255, 112, 88, 1);
+}
+
+section form textarea {
+    height: 10rem;
+    margin: 3% 0;
+    padding: 1% 0 0 1%;
+    border: 1px solid rgba(255, 112, 88, 0);
+    outline: none;
+    resize: none;
+    width: 80%;
+}
+
+section form textarea:focus {
+    border: 1px solid rgba(255, 112, 88, 1);
+}
+
+section form select {
+    height: 2rem;
+    margin-bottom: 3%;
+    outline: none;
+    border: 1px solid rgba(255, 112, 88, 0);
+    padding-left: 0.5rem;
+    background-color: #ffffff;
+    text-transform: capitalize;
+    width: 82%;
+}
+
+section form option {
+    text-transform: capitalize;
+}
+
+section form button[type=submit] {
+    background-color: #ff7058;
+    border: 1px solid rgba(255, 112, 88, 0);
+    font-size: 1.3rem;
+    padding: 1rem 0;
+    width: 82%;
+    justify-self: flex-end;
+
+    transition: background-color, border, 0.3s ease-in-out;
+}
+
+section form button[type=submit]:hover {
+    background-color: #ffffff;
+    border: 1px solid rgba(255, 112, 88, 1);
+}
+
+/* Pagina INVIATO */
+.inviato {
+    width: 100%;
+    text-align: center;
+    margin: 5% 0;
+}
+
+.inviato > h3 {
+    font-size:  2.5rem;
+    margin-bottom: 0.8%;
+}
+
+.inviato > h3 > span {
+    padding: 0.5% 1%;
+    background-color: #fda395;
+}
+

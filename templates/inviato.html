@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='contatti.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="inviato">
+        <h3>Grazie <span>{{name}}</span> il tuo messaggio è stato inviato.</h3>
+        <h3>Ti risponderemo al più presto sulla tua email <span>{{email}}</span></h3>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='categoria.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <!-- ### Lista Categorie ### -->
+        <section class="categorie">
+            {% for categoria in categorie %}
+                <div class="cat">
+                    <a href="/categoria/{{categoria.slug}}">
+                        <img width="64px" src="../static/img/{{categoria.img}}" alt="">
+                        <h3>{{categoria.nome}}</h3>
+                    </a>
+                </div>
+            {% endfor %}
+            {% if '/categoria/' in request.path %}
+            <a class="remove_filter" href="/">
+                <h4>Rimuovi Filtro</h4>
+            </a>
+            {% endif %}
+
+        </section>
+        <!-- ### FINE Lista Categorie ### -->
+
+        <!-- ### Card Prodotto ### -->
+            <section class="products">
+                {% for prodotto in prodotti %}
+                    <a class="product" href="/prodotto/{{prodotto.id}}">
+                        <img width="260px" src="../static/img/prodotti/{{prodotto.img}}">
+                        <h2 class="title-product">{{prodotto.titolo}}</h2>
+                        {% if prodotto.prezzo_visibile == "si" %}
+                        <p class="price">{{prodotto.prezzo}}€</p>
+                        {% else %}
+                        <p class="price">??€</p>
+                        {% endif %}
+                        <button>Aggiungi al Carrello</button>
+                    </a>
+                {% endfor %}
+            </section>
+        <!-- ### FINE Card Prodotto ### -->
+
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+{% endblock %}

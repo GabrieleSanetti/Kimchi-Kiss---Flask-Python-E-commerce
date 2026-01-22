@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='add-product.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <form action="/add-product" method="POST">
+            <div class="left">
+                <label for="img">Immagine:</label>
+                <input type="file" id="img" name="img">
+                <label for="titolo">Titolo:</label>
+                <input type="text" id="titolo" name="titolo">
+                <label for="codice">Codice:</label>
+                <input type="text" id="codice" name="codice">
+                <label for="descbreve">Descrizione breve:</label>
+                <textarea id="descbreve" name="descbreve"></textarea>
+                <label for="stelle">Stelle:</label>
+                <input type="text" id="stelle" name="stelle">
+                <label for="recensioni">Recensioni:</label>
+                <input type="text" id="recensioni" name="recensioni">
+                <label for="prezzo">Prezzo:</label>
+                <input type="number" step="0.01" id="prezzo" name="prezzo">
+                <label for="qta">Quantità:</label>
+                <input type="text" id="qta" name="qta">
+            </div>
+            <div class="right">
+                <label for="descrizione">Descrizione:</label>
+                <textarea id="descrizione" name="descrizione"></textarea>
+                <label for="tabnutrizione">Tabella Nutrizionale:</label>
+                <input type="text" id="tabnutrizione" name="tabnutrizione">
+                <label for="ingredienti">Ingredienti:</label>
+                <textarea id="ingredienti" name="ingredienti"></textarea>
+                <label for="prezzo_visibile">Prezzo Visibile:</label>
+                <select id="prezzo_visibile" name="prezzo_visibile">
+                    <option value="si">Sì</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" name="categoria">
+                    {% for cat in cats %}
+                        <option value="{{cat.slug}}">{{cat.nome}}</option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit" value="Invia">Invia</button>
+            </div>
+        </form>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+{% endblock %}

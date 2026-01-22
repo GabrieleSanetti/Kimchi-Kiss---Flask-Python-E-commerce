@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    {% endblock %}
+</head>
+<body>
+    <div class="header">
+        <a href="/"><img width="160px" src="../static/img/logo-kimchi-kiss.png" alt=""></a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/contatti">Contatti</a>
+            <a href="/lucky-box" class="special">Lucky Box</a>
+        </nav>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+<hr>
+<footer>
+    {% block footer %}
+        <div class="cont">
+            <h2>contatti e assistenza</h2>
+            <ul>
+                <p>Telefono: 0761 235675</p>
+                <p>Dal Lunedì al Sabato</p>
+                <p>10:00 - 18:00</p>
+            </ul>
+        </div>
+        <div class="cont">
+            <h2>legale</h2>
+            <ul>
+                <li>Privacy Policy</li>
+                <li>Cookie Policy</li>
+                <li>Termini e Condizioni</li>
+            </ul>
+        </div>
+        <div class="cont">
+            <h2>azienda</h2>
+            <p>Chi Siamo</p>
+            <br/>
+            <p><u><i>Sede Legale</i></u></p>
+            <p>Kimchi Kiss</p>
+            <p>Sede Legale: Via Roma, 12</p>
+            <p>01100 Viterbo (VT)</p>
+            <br/>
+            <a href="/add-product">Aggiungi Prodotto</a>
+        </div>
+    {% endblock %}
+</footer>
+</body>
+</html>

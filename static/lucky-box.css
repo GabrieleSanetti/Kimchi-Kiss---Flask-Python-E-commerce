@@ -1,0 +1,186 @@
+.main {
+    width: 100%;
+    padding: 2% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recensioni {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1.6rem;
+}
+
+.testo {
+    font-size: 1.5rem;
+    font-weight: 550;
+}
+
+.stelle img {
+    width: 25px;
+}
+
+.opzioni {
+    width: 100%;
+}
+
+.opzioni form select {
+    margin-bottom: 3%;
+    border: 1px solid rgba(255, 112, 88, 0);
+    padding: 0.5rem 3rem 0.5rem 0.3rem;
+    background-color: #ffffff;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    border: 1px solid #d3d3d3;
+    border-radius: 0.5rem 0 0.5rem 0;
+}
+
+.products {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    gap: 2rem 0;
+    margin: 1rem 0;
+}
+
+.product {
+    text-decoration: none;
+    color: #000000;
+    height: fit-content;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 1rem 1.3rem;
+    box-shadow: 0px 0px 15px rgba(255, 112, 88, 0.4);
+    border: 0.1rem solid rgba(255, 0, 0, 0);
+    border-radius: 20px 0px;
+
+    transition: box-shadow, border, 0.4s ease-in-out;
+}
+
+.product:hover {
+    box-shadow: none;
+    border: 0.1rem solid rgba(255, 112, 88, 0.4);
+}
+
+.product img {
+    max-width: 100%;
+    width: 120px;
+    height: 120px;
+    align-self: center;
+    object-fit: contain;
+}
+
+.product h2 {
+    height: fit-content;
+    font-size: 1.4rem;
+    align-self: center;
+}
+
+.main form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.main form button[type=submit] {
+    background-color: #ff7058;
+    border: 1px solid rgba(255, 112, 88, 0);
+    font-size: 2rem;
+    padding: 0.5% 2%;
+    color: #ffffff;
+
+    transition: background-color, border, 0.3s ease-in-out;
+}
+
+.main form button[type=submit]:hover {
+    background-color: #ffffff;
+    border: 1px solid rgba(255, 112, 88, 1);
+    cursor: pointer;
+    color: rgb(255, 112, 88)
+}
+
+.main > h2 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    background-image: linear-gradient(155deg, rgba(255, 209, 92, 0.6) 15%, rgba(255, 112, 88, 0.6) 65%, rgba(255, 209, 92, 0.6) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #b5b5b5;
+}
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-content: flex-start;
+    width: 100%;
+    height: fit-content;
+    margin-top: 5rem;
+}
+
+.box > img {
+    width: 50%;
+}
+
+.testo-box {
+    width: 50%;
+    padding: 4rem;
+}
+
+.testo-box > h3 {
+    font-size: 3rem;
+}
+
+.testo-box > p {
+    font-size: 1.7rem;
+    margin: 1.5rem 0;
+}
+
+.testo-box > h3 > span {
+    background-image: linear-gradient(155deg, rgba(255, 209, 92, 0.6) 15%, rgba(255, 112, 88, 0.6) 65%, rgba(255, 209, 92, 0.6) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.03rem #818181;
+    padding-right: 0.5rem;
+}
+
+.testo-box > ul li {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.kimchi {
+    background-color: #e54124;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.03rem #818181;
+}
+
+.kiss {
+    background-color: #fda194;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.03rem #818181;
+}

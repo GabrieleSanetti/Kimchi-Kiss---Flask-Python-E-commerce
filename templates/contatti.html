@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='contatti.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section>
+        <form action="/contatti" method="POST">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <textarea id="message" name="message" placeholder="Scrivi il tuo messaggio..."></textarea>
+            <button type="submit" value="Invia">Invia</button>
+        </form>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+{% endblock %}
