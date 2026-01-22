@@ -18,6 +18,7 @@ def initialize(Base, Base2, Base3):
     if database_url.startswith("postgres://"):
         database_url = database_url.replace("postgres://", "postgresql://", 1)
     
+    print(f"Connessione in corso a: {url.split('@')[-1]}")
 
     # url = "postgresql://postgres:12345@db:5432/"
     # db_name = "postgres"
