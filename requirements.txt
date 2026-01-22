@@ -3,7 +3,7 @@ Flask==3.0.0
 
 # L'adattatore per far parlare Python con PostgreSQL
 # Usiamo -binary perché è più facile da installare in Docker (non richiede compilatori C)
-psycopg2-binary==2.9.9
+psycopg2-binary==2.9.10
 
 # (Opzionale ma consigliato) Per gestire il database in modo più semplice tramite oggetti (ORM)
 Flask-SQLAlchemy==3.1.1
