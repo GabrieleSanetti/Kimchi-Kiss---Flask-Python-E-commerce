@@ -10,3 +10,5 @@ Flask-SQLAlchemy==3.1.1
 
 # (Opzionale) Per gestire variabili d'ambiente in modo ordinato
 python-dotenv==1.0.0
+
+gunicorn
